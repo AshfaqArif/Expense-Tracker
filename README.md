@@ -32,7 +32,7 @@ The Expense Tracker is a web application designed to help users track their expe
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Jibinjoseph22/Expense-tracker.git
+   git clone (https://github.com/AshfaqArif/Expense-Tracker)
    ```
 
 2. **Navigate to the Project Directory:**
@@ -101,5 +101,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or support, please contact:
 
 - 
-- **LinkedIn:** [Jibin Joseph](https://in.linkedin.com/in/ashfaq-arif-b1329326a))
+- **LinkedIn:** [Ashfaq Arif](https://in.linkedin.com/in/ashfaq-arif-b1329326a))
 ```

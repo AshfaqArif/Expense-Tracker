@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="planet"></div>
+    <div class="galaxy"></div>
+    <div class="star" style="top: 20%; left: 30%;"></div>
+    <div class="star" style="top: 40%; left: 60%;"></div>
+    <div class="star" style="top: 70%; left: 10%;"></div>
+    <div class="comet"></div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'add_expense' %}">Add Expense</a></li>
+            <li><a href="{% url 'settings' %}">Settings</a></li>
+            <li><a href="{% url 'home' %}">Logout</a></li>
+        </ul>
+    </div>
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="main-content" id="main-content">
+        <h1>Expense Tracker Dashboard</h1>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h2>Yesterday's Expenses</h2>
+                {% if yesterday_expenses %}
+                <ul class="expenses-list">
+                    {% for expense in yesterday_expenses %}
+                    <li>
+                        <p>{{ expense.date }} - {{ expense.item_name }}</p>
+                        <p class="cost">₹{{ expense.cost }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No expenses recorded yesterday.</p>
+                {% endif %}
+            </div>
+            <div class="card">
+                <h2>Today's Expenses</h2>
+                {% if today_expenses %}
+                <ul class="expenses-list">
+                    {% for expense in today_expenses %}
+                    <li>
+                        <p>{{ expense.date }} - {{ expense.item_name }}</p>
+                        <p class="cost">₹{{ expense.cost }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No expenses recorded today.</p>
+                {% endif %}
+            </div>
+            <div class="card">
+                <h2>Monthly Expenses</h2>
+                {% if monthly_expenses %}
+                <ul class="expenses-list">
+                    {% for expense in monthly_expenses %}
+                    <li>
+                        <p>{{ expense.date }} - {{ expense.item_name }}</p>
+                        <p class="cost">₹{{ expense.cost }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No expenses recorded this month.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    </script>
+</body>
+
+</html>

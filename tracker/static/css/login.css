@@ -1,0 +1,219 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Fallback color */
+    flex-direction: row; /* Arrange elements horizontally */
+    text-align: center; /* Center align text */
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation for body */
+}
+
+/* Keyframes for body fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animated Background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(63, 94, 251, 0.8), rgba(252, 70, 107, 0.8));
+    animation: backgroundAnimation 30s infinite linear, colorChange 30s infinite linear;
+    z-index: -1; /* Ensure it is behind the content */
+}
+
+/* Keyframes for background animation */
+@keyframes backgroundAnimation {
+    0%, 100% {
+        background: radial-gradient(circle, rgba(63, 94, 251, 0.8), rgba(252, 70, 107, 0.8));
+    }
+    50% {
+        background: radial-gradient(circle, rgba(252, 70, 107, 0.8), rgba(63, 94, 251, 0.8));
+    }
+}
+
+/* Keyframes for color change */
+@keyframes colorChange {
+    0%, 100% {
+        background: radial-gradient(circle, rgba(63, 94, 251, 0.6), rgba(252, 70, 107, 0.6));
+    }
+}
+
+/* Flex Container for Header and Login */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em; /* Space between header and login container */
+    width: 100%;
+}
+
+/* Header Section */
+.header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    animation: slideInFromLeft 1s ease-out; /* Slide-in animation for header */
+    flex: 1; /* Allow header to grow and shrink */
+}
+
+/* Keyframes for header slide-in animation */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Login Container */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.4); /* Solid white with transparency */
+    padding: 2em;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    max-width: 400px; /* Limit container width */
+    width: 100%; /* Full width within max-width */
+    text-align: center; /* Center text */
+    backdrop-filter: blur(10px); /* Apply blur effect for transparency */
+    animation: fadeIn 1.5s ease-out; /* Fade-in animation for login container */
+    flex: 1; /* Allow login container to grow and shrink */
+}
+
+/* Header */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #fff; /* White text color */
+    animation: fadeInUp 1s ease-out; /* Fade-in and slide-up animation for headings */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #3f5efb; /* Accent color */
+}
+
+p {
+    font-size: 1.2em;
+    color: #ddd; /* Light gray text color */
+    margin-bottom: 2em;
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Reduced space between form elements */
+}
+
+/* Input Fields */
+input {
+    padding: 0.8em;
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light gray border */
+    font-size: 1em;
+    color: #333; /* Dark text color */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+/* Focus effect on input fields */
+input:focus {
+    border-color: #3f5efb; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button */
+button {
+    padding: 0.8em 1.5em;
+    background-color: #ff4b2b; /* Vibrant color */
+    width: 100%; /* Full width */
+    color: #fff;
+    border: none;
+    border-radius: 12px; /* Curved edges */
+    cursor: pointer;
+    font-size: 1em;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.6s, transform 0.6s, box-shadow 0.6s;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #ff416c; /* Darker color on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+    box-shadow: 0 0 15px rgba(255, 75, 43, 0.8); /* Glowing effect */
+}
+
+/* Click effect */
+button:active {
+    background-color: #ff4b2b; /* Restore color on click */
+    transform: scale(0.95); /* Slightly reduce size on click */
+}
+
+/* Glow effect on hover */
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 75, 43, 0.3); /* Light overlay */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 1s, opacity 1s;
+    z-index: -1;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Expand glow effect */
+    opacity: 1; /* Fully visible glow */
+}
+
+button:active::before {
+    background: rgba(255, 75, 43, 0.5); /* Slightly stronger glow on click */
+    transform: translate(-50%, -50%) scale(1.2); /* Enhanced glow effect */
+    opacity: 0.8; /* Less visible during click */
+}
+
+/* Error Messages */
+.error {
+    color: #e74c3c; /* Red for errors */
+    font-size: 0.9em;
+    margin-top: 0.5em;
+}

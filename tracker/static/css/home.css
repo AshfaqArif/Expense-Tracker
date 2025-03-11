@@ -1,0 +1,375 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, 
+    #000428, /* Deep space blue */
+    #001f5a, /* Darker blue transitioning to galactic blue */
+    #002c82, /* Deepening blue before galactic blue */
+    #004e92, /* Galactic blue */
+    #2a0845, /* Cosmic purple */
+    #000000  /* Black */
+   );
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #001f5a, /* Darker blue transitioning to galactic blue */
+                                #002c82, /* Deepening blue before galactic blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               );
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Header Content */
+.header-content h1 {
+    margin: 0;
+    font-size: 4em;
+    font-weight: 700;
+    background: linear-gradient(135deg, 
+                                #1abc9c, /* Light teal */
+                                #16a085  /* Darker teal */
+                               ); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.header-tagline {
+    font-size: 1.6em;
+    margin: 0.5em 0;
+    font-weight: 300;
+    color: #ecf0f1; /* Light gray for better readability */
+}
+
+.header-buttons {
+    margin-top: 1.5em; /* Pushes the buttons down a bit */
+}
+
+.header-buttons .btn {
+    background-color: #1abc9c; /* Teal */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 2em;
+    border-radius: 6px;
+    margin: 0.5em;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.header-buttons .btn:hover {
+    background-color: #16a085; /* Darker teal */
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #001f5a, /* Darker blue transitioning to galactic blue */
+                                #002c82, /* Deepening blue before galactic blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               ); 
+    padding: 1em 0;
+    text-align: center;
+}
+
+.navbar .nav-link {
+    color: #fff; /* Light text color */
+    text-decoration: none;
+    padding: 0.7em 1.2em;
+    font-size: 1.1em;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-link:hover {
+    background-color: #34495e; /* Darker blue-gray */
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4em;
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #001f5a, /* Darker blue transitioning to galactic blue */
+                                #002c82, /* Deepening blue before galactic blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               );
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.6em;
+    margin: 1em 0;
+}
+
+.cta-btn {
+    background-color: #1abc9c; /* Teal */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 2em;
+    border-radius: 6px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #16a085; /* Darker teal */
+    transform: scale(1.05);
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.features {
+    padding: 2em;
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #001f5a, /* Darker blue transitioning to galactic blue */
+                                #002c82, /* Deepening blue before galactic blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               ); 
+}
+.features h2 {
+    
+    color: #fff; /* White text color */
+    padding: 0.5em 1em; /* Padding around the text */
+    border-radius: 6px; /* Rounded corners */
+    display: inline-block; /* Fits the background to the text */
+    margin: 0; /* Remove default margin */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5em; /* Increased gap between items */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Feature Item Styles */
+.feature-item {
+    background-color: #fff; /* White background for feature items */
+    padding: 1.5em;
+    border-radius: 12px;
+    text-align: center;
+    color: #0e0d0d;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px; /* Max width for feature items */
+    margin: 0 auto; /* Center item horizontally */
+    position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* Hide overflow of animated shadow */
+}
+
+/* Bright Violet-Blue Shadow Animation */
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(11, 10, 10, 0.3), 0 0 30px rgba(148, 0, 211, 0.4), 0 0 30px rgba(0, 0, 255, 0.4); /* Bright violet and blue shadows */
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #3498db; /* Cool blue accent */
+}
+
+.feature-item h3 {
+    margin-top: 0.5em;
+    font-size: 1.6em;
+}
+
+.feature-item p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 2em;
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #001f5a, /* Darker blue transitioning to galactic blue */
+                                #002c82, /* Deepening blue before galactic blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               ); 
+}
+.testimonials h2 {
+    
+    color: #fff; /* White text color */
+    padding: 0.5em 1em; /* Padding around the text */
+    border-radius: 6px; /* Rounded corners */
+    display: inline-block; /* Fits the background to the text */
+    margin: 0; /* Remove default margin */
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: auto;
+}
+
+.testimonial-item {
+    background: #fff; /* White background for testimonial items */
+    padding: 1.5em;
+    border-radius: 12px;
+    margin: 1.5em;
+    flex: 1;
+    min-width: 300px;
+    color: #32bad9;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.testimonial-item:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-item blockquote {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.testimonial-item footer {
+    text-align: right;
+    font-style: italic;
+    color: #ece6e6; /* Darker gray for footer */
+}
+
+/* Call to Action Section */
+.cta {
+    background: linear-gradient(135deg, 
+    #000428, /* Deep space blue */
+    #001f5a, /* Darker blue transitioning to galactic blue */
+    #002c82, /* Deepening blue before galactic blue */
+    #004e92, /* Galactic blue */
+    #2a0845, /* Cosmic purple */
+    #000000  /* Black */
+   );
+    color: #fff;
+    padding: 3em;
+    text-align: center;
+}
+
+.cta-btn {
+    background-color: #1abc9c; /* Teal */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7em 2em;
+    border-radius: 3px;
+    font-size: 1.4em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #16a085; /* Darker teal */
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+.footer {
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #001f5a, /* Darker blue transitioning to galactic blue */
+                                #002c82, /* Deepening blue before galactic blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               ); 
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+}
+
+.footer a {
+    color: #1abc9c; /* Teal for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #16a085; /* Darker teal */
+}
+/* Contact Section */
+.contact {
+    padding: 2em;
+    background: #f2f4f5; /* Light gray background */
+}
+
+.contact form {
+    display: grid;
+    gap: 1em;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+}
+
+.contact button {
+    background: linear-gradient(135deg, 
+                                #000428, /* Deep space blue */
+                                #004e92, /* Galactic blue */
+                                #2a0845, /* Cosmic purple */
+                                #000000  /* Black */
+                               ); /* Teal */
+    color: #fff;
+    padding: 0.8em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #16a085; /* Darker teal */
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50; /* Dark blue-gray */
+    color: #f8f9fa;
+    text-align: center;
+    padding: 1em;
+} 

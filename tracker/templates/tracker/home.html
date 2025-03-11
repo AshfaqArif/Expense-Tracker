@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Expense Tracker</h1>
+            <p class="header-tagline">Track Your Spending with Precision</p>
+            <div class="header-buttons">
+                <a href="http://127.0.0.1:8000/login/" class="btn">Login</a>
+                <a href="{% url 'signup' %}" class="btn">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Master Your Finances</h1>
+            <p>Our expense tracker helps you manage your money effortlessly.</p>
+            <a href="{% url 'signup' %}" class="cta-btn">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/hero-image.jpg' %}" alt="Expense Tracker" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Real-Time Tracking</h3>
+                <p>Track your spending as it happens, and stay on top of your finances.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-lock"></i>
+                <h3>Secure</h3>
+                <p>Your data is protected with industry-standard encryption.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-file-alt"></i>
+                <h3>Detailed Reports</h3>
+                <p>Generate comprehensive reports to analyze your spending habits.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-tag"></i>
+                <h3>Expense Categories</h3>
+                <p>Organize expenses into categories for better tracking and management.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Budget Planning</h3>
+                <p>Set budgets and monitor your progress towards financial goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item">
+                <blockquote>
+                    <p>"This tool revolutionized the way I manage my finances. Highly recommended!"</p>
+                    <footer>- Jane Doe</footer>
+                </blockquote>
+            </div>
+            <div class="testimonial-item">
+                <blockquote>
+                    <p>"A fantastic application with all the features you need to stay on top of your spending."</p>
+                    <footer>- John Smith</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Join Us Today!</h2>
+        <p>Experience financial control like never before. Sign up now and take charge of your money.</p>
+        <a href="{% url 'signup' %}" class="cta-btn">Sign Up</a>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="id_name">Your Name</label>
+            {{ form.name }}
+        </div>
+        <div>
+            <label for="id_email">Your Email</label>
+            {{ form.email }}
+        </div>
+        <div>
+            <label for="id_message">Your Message</label>
+            {{ form.message }}
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
+    {% if success_message %}
+        <p class="success">{{ success_message }}</p>
+    {% endif %}
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional JavaScript for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js" async></script>
+    <script>
+        ScrollReveal().reveal('.hero-content', { delay: 500, origin: 'left', distance: '50px', opacity: 0 });
+        ScrollReveal().reveal('.feature-item', { delay: 300, origin: 'bottom', distance: '30px', opacity: 0 });
+        ScrollReveal().reveal('.testimonial-item', { delay: 400, origin: 'bottom', distance: '30px', opacity: 0 });
+        ScrollReveal().reveal('.cta', { delay: 500, origin: 'top', distance: '50px', opacity: 0 });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const numStars = 150;
+            const starsContainer = document.querySelector('.stars');
+    
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.width = `${Math.random() * 3 + 1}px`; // Random size between 1 and 4px
+                star.style.height = star.style.width;
+                star.style.top = `${Math.random() * 100}vh`; // Random vertical position
+                star.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+                starsContainer.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>

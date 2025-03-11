@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <div class="stars"></div>
+
+    <div class="container">
+        <h1><i class="fas fa-cog"></i> Settings</h1>
+        <h2><i class="fas fa-wallet"></i> Manage Expenses</h2>
+        <ul>
+            {% for expense in expenses %}
+                <li>
+                    <span><i class="fas fa-calendar-alt"></i>{{ expense.date }} - {{ expense.item_name }}: ${{ expense.cost }}</span>
+                    <span class="actions">
+                        <a href="{% url 'edit_expense' expense.id %}" class="edit-btn"><i class="fas fa-edit" style="color:#007bff #ff6600;"></i> Edit</a>
+                        <a href="{% url 'delete_expense' expense.id %}" class="delete-btn"><i class="fas fa-trash-alt" style="color: #ff6600;"></i> Delete</a>
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const starContainer = document.querySelector('.stars');
+        const numStars = 50; // Reduced number of stars
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 1; // Star size between 1 and 3 pixels
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${Math.random() * 10 + 5}s`; // Animation duration between 5s and 15s
+            starContainer.appendChild(star);
+        }
+    });
+</script>
+
+
+</html>

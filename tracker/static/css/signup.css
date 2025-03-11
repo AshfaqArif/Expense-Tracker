@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Fallback color */
+    text-align: center; /* Center align text */
+}
+
+/* Animated Background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(63, 94, 251, 0.8), rgba(252, 70, 107, 0.8));
+    animation: backgroundAnimation 30s infinite linear, colorChange 30s infinite linear;
+    z-index: -1; /* Ensure it is behind the content */
+}
+
+/* Keyframes for background animation */
+@keyframes backgroundAnimation {
+    0%, 100% {
+        background: radial-gradient(circle, rgba(63, 94, 251, 0.8), rgba(252, 70, 107, 0.8));
+    }
+    50% {
+        background: radial-gradient(circle, rgba(252, 70, 107, 0.8), rgba(63, 94, 251, 0.8));
+    }
+}
+
+/* Keyframes for color change */
+@keyframes colorChange {
+    0%, 100% {
+        background: radial-gradient(circle, rgba(63, 94, 251, 0.6), rgba(252, 70, 107, 0.6));
+    }
+}
+
+/* Header Section */
+.expense-tracker{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1em; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    margin-bottom: 2em; /* Added margin-bottom to create gap between header and containers */
+    margin-left: 3em; /* Added margin-left to move the header to the left */
+    animation: fadeIn 1s ease-out; /* Fade-in animation for header */
+    text-align: left; /* Align text to the left */
+}
+
+/* Keyframes for header fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjusted to space out containers */
+    gap: 20px; /* Space between containers */
+    max-width: 900px; /* Adjust as needed */
+    width: 100%;
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Solid white with transparency */
+    padding: 1em; /* Reduced padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(222, 90, 90, 0.2); /* Soft shadow */
+    max-width: 520px; /* Further reduced max-width */
+    width: 100%; /* Full width within max-width */
+    text-align: center; /* Center text */
+    backdrop-filter: blur(8px); /* Apply blur effect for transparency */
+    animation: fadeIn 1s ease-out; /* Fade-in animation for signup container */
+}
+
+/* Expense Tracker Container */
+
+
+/* Header */
+h1, h2 {
+    font-size: 1.4em; /* Further reduced font size */
+    margin-bottom: 0.4em;
+    color: #fff; /* White text color */
+    animation: fadeInUp 1s ease-out; /* Fade-in and slide-up animation for headings */
+}
+
+h1 {
+    font-size: 1.6em; /* Slightly larger for emphasis */
+    color: #3f5efb; /* Accent color */
+}
+
+p {
+    font-size: 0.9em; /* Font size for description */
+    color: #ddd; /* Light gray text color */
+    margin-bottom: 0.8em; /* Further reduced margin */
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em; /* Reduced space between form elements */
+}
+
+/* Form Group */
+.form-group {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically center items */
+    gap: 0.6em; /* Space between label and input */
+    margin-bottom: 0.6em; /* Further reduced margin */
+}
+
+/* Label */
+label {
+    flex: 1; /* Take up space next to the input */
+    margin: 0; /* Remove margin */
+    color: #555;
+    text-align: right; /* Align text to the right */
+}
+
+/* Input Fields */
+input {
+    flex: 2; /* Allow input to take up more space */
+    padding: 0.6em; /* Reduced padding */
+    border-radius: 4px; /* More rounded corners */
+    border: 1px solid #ddd; /* Light border */
+    box-sizing: border-box;
+    font-size: 0.85em; /* Reduced font size */
+    transition: all 0.3s ease; /* Smooth transition for input focus */
+}
+
+/* Address Textarea */
+textarea {
+    flex: 2; /* Ensure textarea takes up similar space as inputs */
+    padding: 0.6em; /* Same padding as inputs */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border */
+    box-sizing: border-box;
+    font-size: 0.85em; /* Same font size as inputs */
+    transition: all 0.3s ease; /* Smooth transition for textarea focus */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Focused Input Fields */
+input:focus, textarea:focus {
+    border-color: #3f5efb; /* Accent color */
+    box-shadow: 0 0 4px rgba(63, 94, 251, 0.2); /* Glow effect */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Submit Button */
+button {
+    background-color: #28a745; /* Green background */
+    color: #fff;
+    border: none;
+    padding: 0.6em; /* Reduced padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 0.9em; /* Reduced font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Validation Messages */
+#validationMessages {
+    margin-top: 0.6em; /* Further reduced margin */
+}
+
+/* Error Messages */
+.error {
+    color: #dc3545; /* Red color for errors */
+}
+
+/* Valid Messages */
+.valid {
+    color: #28a745; /* Green color for success */
+}

@@ -101,5 +101,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or support, please contact:
 
 - 
-- **LinkedIn:** [Jibin Joseph](http://www.linkedin.com/in/jibinjoseph2))
+- **LinkedIn:** [Jibin Joseph](https://in.linkedin.com/in/ashfaq-arif-b1329326a))
 ```

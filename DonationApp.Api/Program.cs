@@ -5,16 +5,18 @@ using DonationApp.Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Threading.Tasks;
 
 namespace DonationApp.Api;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddControllers();
         builder.Services.AddAuthorization();
 
         // EF Core SQLite
@@ -65,9 +67,16 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
 
+        app.MapControllers();
         // Placeholder root endpoint
         app.MapGet("/", () => Results.Ok(new { message = "Donation App API" }));
 
-        app.Run();
+        using (var scope = app.Services.CreateScope())
+        {
+            var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            await DataSeeder.SeedAsync(db);
+        }
+
+        await app.RunAsync();
     }
 }

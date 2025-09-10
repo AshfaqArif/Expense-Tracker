@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "QpDpcrVVvvdUccFAJyd/RdX2jxFD8RDGmTklhPJEMGY=",
+  "Source": "DonationApp.Api",
+  "BasePath": "_content/DonationApp.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
